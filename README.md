@@ -10,5 +10,5 @@ R3BFileSource is distributed under the terms of the GNU General Public Licence v
 ## Download
 
 ~~~bash
-git clone -b dev https://github.com/R3BRootGroup/R3BFileSource.git
+git clone https://github.com/R3BRootGroup/R3BFileSource.git
 ~~~
