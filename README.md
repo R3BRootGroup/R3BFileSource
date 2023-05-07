@@ -5,7 +5,7 @@ Framework of file sources for testing the R3B experiment analysis, such as lmd a
 For the software-related user support you can post a new topic on our [forum](https://forum.gsi.de/index.php?t=index&cat=40&).
 
 ## License
-R3BFileSource is distributed under the terms of the GNU General Public Licence version 3 ([GPLv3](https://github.com/R3BRootGroup/R3BFileSource/blob/dev/LICENSE)).
+R3BFileSource is distributed under the terms of the GNU General Public Licence version 3 ([GPLv3](https://github.com/R3BRootGroup/R3BFileSource/blob/main/LICENSE)).
 
 ## Download
 
