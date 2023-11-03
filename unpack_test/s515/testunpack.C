@@ -67,30 +67,31 @@ void testunpack(const Int_t fRunId = 503, const Int_t nev = -1, const Int_t fExp
     outputFilename.ReplaceAll("//", "/");
 
     // UPEXPS path
-    upexps_dir = ucesb_dir + "/../upexps";
-    ucesb_path = upexps_dir + "/202104_s515/202104_s515 --allow-errors --input-buffer=70Mi";
+    //upexps_dir = ucesb_dir + "/../upexps";
+    //ucesb_path = upexps_dir + "/202104_s515/202104_s515 --allow-errors --input-buffer=70Mi";
+    ucesb_path = ucesb_dir + "/empty/empty --allow-errors --input-buffer=70Mi";
     ucesb_path.ReplaceAll("//", "/");
 
     // Setup: Selection of detectors ------------------------
     // --- FRS
     // --------------------------------------------------------------------------
-    Bool_t fFrsSci = true; // Start: Plastic scintillators at FRS
+    Bool_t fFrsSci = false;  // Start: Plastic scintillators at FRS
     // --- R3B standard
     // -----------------------------------------------------------------
-    Bool_t fPsp = true;     // Psp: Silicon detectors for tracking
-    Bool_t fLos = true;     // Los scintillator for R3B experiments
-    Bool_t fAms = true;     // AMS tracking detectors
-    Bool_t fCalifa = true;  // Califa calorimeter
-    Bool_t fMusic = true;   // R3B-Music: Ionization chamber for charge-Z before GLAD
-    Bool_t fFiber10 = true; // Fiber10 behind GLAD
-    Bool_t fFiber11 = true; // Fiber11 behind GLAD
-    Bool_t fFiber12 = true; // Fiber12 behind GLAD
-    Bool_t fFiber13 = true; // Fiber13 behind GLAD
-    Bool_t fTofD = true;    // ToF-Wall for time-of-flight of fragments behind GLAD
-    Bool_t fNeuland = true; // NeuLAND for neutrons behind GLAD
+    Bool_t fPsp = false;     // Psp: Silicon detectors for tracking
+    Bool_t fLos = false;     // Los scintillator for R3B experiments
+    Bool_t fAms = false;     // AMS tracking detectors
+    Bool_t fCalifa = false;  // Califa calorimeter
+    Bool_t fMusic = false;   // R3B-Music: Ionization chamber for charge-Z before GLAD
+    Bool_t fFiber10 = false; // Fiber10 behind GLAD
+    Bool_t fFiber11 = false; // Fiber11 behind GLAD
+    Bool_t fFiber12 = false; // Fiber12 behind GLAD
+    Bool_t fFiber13 = false; // Fiber13 behind GLAD
+    Bool_t fTofD = false;    // ToF-Wall for time-of-flight of fragments behind GLAD
+    Bool_t fNeuland = false; // NeuLAND for neutrons behind GLAD
     // --- Sofia
     // ------------------------------------------------------------------------
-    Bool_t fMwpc0 = true; // MWPC0 for tracking at Cave-C entrance
+    Bool_t fMwpc0 = false; // MWPC0 for tracking at Cave-C entrance
 
     // Create online run ------------------------------------
     R3BEventHeader* EvntHeader = new R3BEventHeader();
@@ -109,7 +110,7 @@ void testunpack(const Int_t fRunId = 503, const Int_t nev = -1, const Int_t fExp
 
     // Add readers ------------------------------------------
     source->AddReader(new R3BUnpackReader(&ucesb_struct.unpack, offsetof(EXT_STR_h101, unpack)));
-
+/*
     auto trloiitpat_reader = new R3BTrloiiTpatReader(&ucesb_struct.unpacktpat, offsetof(EXT_STR_h101, unpacktpat));
     source->AddReader(trloiitpat_reader);
 
@@ -118,7 +119,7 @@ void testunpack(const Int_t fRunId = 503, const Int_t nev = -1, const Int_t fExp
 
     source->AddReader(new R3BTrloiiScalerReader((EXT_STR_h101_TRLO_onion*)&ucesb_struct.trloscaler,
                                                 offsetof(EXT_STR_h101, trloscaler)));
-
+*/
     if (fFrsSci)
     {
         auto unpackWRS2 =
