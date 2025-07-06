@@ -142,7 +142,7 @@ void testunpack(const Int_t fRunId = 503, const Int_t nev = -1, const Int_t fExp
     {
         auto unpackWRpsp = new R3BWhiterabbitPspReader(
             (EXT_STR_h101_TIMESTAMP_PSPX*)&ucesb_struct.wrpspx, offsetof(EXT_STR_h101, wrpspx), 0xc00);
-        auto unpackpsp = new R3BPspxReader((EXT_STR_h101_PSP*)&ucesb_struct.psp, offsetof(EXT_STR_h101, psp));
+        auto unpackpsp = new R3BS515PspxReader((EXT_STR_h101_PSP*)&ucesb_struct.psp, offsetof(EXT_STR_h101, psp));
         source->AddReader(unpackWRpsp);
         source->AddReader(unpackpsp);
     }
