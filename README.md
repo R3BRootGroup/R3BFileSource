@@ -1,4 +1,4 @@
-# R3BFileSource [![license](https://alfa-ci.gsi.de/shields/badge/license-GPL--3.0-orange.svg)](COPYRIGHT)
+# R3BFileSource [![license](https://img.shields.io/badge/License-GPLv3-blue.svg)](COPYRIGHT)
 Framework of file sources for testing the R3B experiment analysis, such as lmd and parameter files.
 
 ## Discussion Forum
