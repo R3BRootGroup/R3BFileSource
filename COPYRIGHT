@@ -1,0 +1,9 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: R3BFileSource
+Upstream-Contact: Jose Luis Rodriguez <j.l.rodriguez.sanchez@udc.es>
+Source: https://github.com/R3BRootGroup/R3BFileSource
+
+Files: *
+Copyright: 2023-2025  University of Coruña
+Copyright: 2023-2025  [see AUTHORS file]
+License:   GPL-3.0    [see LICENSE file]
