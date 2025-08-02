@@ -67,15 +67,15 @@ void testunpack(const Int_t fRunId = 503, const Int_t nev = -1, const Int_t fExp
     outputFilename.ReplaceAll("//", "/");
 
     // UPEXPS path
-    //upexps_dir = ucesb_dir + "/../upexps";
-    //ucesb_path = upexps_dir + "/202104_s515/202104_s515 --allow-errors --input-buffer=70Mi";
+    // upexps_dir = ucesb_dir + "/../upexps";
+    // ucesb_path = upexps_dir + "/202104_s515/202104_s515 --allow-errors --input-buffer=70Mi";
     ucesb_path = ucesb_dir + "/empty/empty --allow-errors --input-buffer=70Mi";
     ucesb_path.ReplaceAll("//", "/");
 
     // Setup: Selection of detectors ------------------------
     // --- FRS
     // --------------------------------------------------------------------------
-    Bool_t fFrsSci = false;  // Start: Plastic scintillators at FRS
+    Bool_t fFrsSci = false; // Start: Plastic scintillators at FRS
     // --- R3B standard
     // -----------------------------------------------------------------
     Bool_t fPsp = false;     // Psp: Silicon detectors for tracking
@@ -104,22 +104,21 @@ void testunpack(const Int_t fRunId = 503, const Int_t nev = -1, const Int_t fExp
     // Create source using ucesb for input ------------------
     EXT_STR_h101 ucesb_struct;
 
-    auto* source =
-        new R3BUcesbSource(filename, ntuple_options, ucesb_path, &ucesb_struct, sizeof(ucesb_struct));
+    auto* source = new R3BUcesbSource(filename, ntuple_options, ucesb_path, &ucesb_struct, sizeof(ucesb_struct));
     source->SetMaxEvents(nev);
 
     // Add readers ------------------------------------------
     source->AddReader(new R3BUnpackReader(&ucesb_struct.unpack, offsetof(EXT_STR_h101, unpack)));
-/*
-    auto trloiitpat_reader = new R3BTrloiiTpatReader(&ucesb_struct.unpacktpat, offsetof(EXT_STR_h101, unpacktpat));
-    source->AddReader(trloiitpat_reader);
+    /*
+        auto trloiitpat_reader = new R3BTrloiiTpatReader(&ucesb_struct.unpacktpat, offsetof(EXT_STR_h101, unpacktpat));
+        source->AddReader(trloiitpat_reader);
 
-    source->AddReader(new R3BWhiterabbitMasterReader(
-        (EXT_STR_h101_WRMASTER*)&ucesb_struct.wrmaster, offsetof(EXT_STR_h101, wrmaster), 0x1000));
+        source->AddReader(new R3BWhiterabbitMasterReader(
+            (EXT_STR_h101_WRMASTER*)&ucesb_struct.wrmaster, offsetof(EXT_STR_h101, wrmaster), 0x1000));
 
-    source->AddReader(new R3BTrloiiScalerReader((EXT_STR_h101_TRLO_onion*)&ucesb_struct.trloscaler,
-                                                offsetof(EXT_STR_h101, trloscaler)));
-*/
+        source->AddReader(new R3BTrloiiScalerReader((EXT_STR_h101_TRLO_onion*)&ucesb_struct.trloscaler,
+                                                    offsetof(EXT_STR_h101, trloscaler)));
+    */
     if (fFrsSci)
     {
         auto unpackWRS2 =

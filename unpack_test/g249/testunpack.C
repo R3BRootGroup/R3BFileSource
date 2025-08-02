@@ -62,7 +62,7 @@ void testunpack(const Int_t fRunId = 503, const Int_t nev = -1)
     FairLogger::GetLogger()->SetColoredLog(true);
 
     TStopwatch timer;
-    
+
     const TString workDirectory = getenv("VMCWORKDIR");
     TString filename = workDirectory + "/R3BFileSource/lmds/s515/main" + cRunId + "*.lmd";
     filename.ReplaceAll("//", "/");
