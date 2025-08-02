@@ -51,7 +51,7 @@ typedef struct EXT_STR_h101_t
     EXT_STR_h101_WRFOOT_onion_t wrfoot;
 } EXT_STR_h101;
 
-void testunpack(TString filename, const Int_t fRunId = 503, const Int_t nev = -1)
+void testunpack(const Int_t fRunId = 503, const Int_t nev = -1)
 {
     const Int_t fExpId = 249;
 
@@ -64,7 +64,7 @@ void testunpack(TString filename, const Int_t fRunId = 503, const Int_t nev = -1
     TStopwatch timer;
     
     const TString workDirectory = getenv("VMCWORKDIR");
-    filename = workDirectory + "/R3BFileSource/lmds/s515/main" + cRunId + "*.lmd";
+    TString filename = workDirectory + "/R3BFileSource/lmds/s515/main" + cRunId + "*.lmd";
     filename.ReplaceAll("//", "/");
 
     // file names and paths  -----------------------------------
@@ -82,7 +82,7 @@ void testunpack(TString filename, const Int_t fRunId = 503, const Int_t nev = -1
     TString outputFilename = "g249_map_offline_run" + cRunId + ".root";
     outputFilename.ReplaceAll("//", "/");
 
-    TString ucesb_path = upexps_dir + "/run_all --allow-errors --input-buffer=600Mi";
+    TString ucesb_path = upexps_dir + "/empty/empty --allow-errors --input-buffer=600Mi";
     ucesb_path.ReplaceAll("//", "/");
 
     // Setup: Selection of detectors
