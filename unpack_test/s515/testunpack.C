@@ -94,9 +94,9 @@ void testunpack(const Int_t fRunId = 503, const Int_t nev = -1, const Int_t fExp
     Bool_t fMwpc0 = false; // MWPC0 for tracking at Cave-C entrance
 
     // Create online run ------------------------------------
-    R3BEventHeader* EvntHeader = new R3BEventHeader();
+    auto* EvntHeader = new R3BEventHeader();
     EvntHeader->SetExpId(fExpId);
-    FairRunOnline* run = new FairRunOnline();
+    auto* run = new FairRunOnline();
     run->SetEventHeader(EvntHeader);
     run->SetRunId(fRunId);
     run->SetSink(new FairRootFileSink(outputFilename));
@@ -104,7 +104,7 @@ void testunpack(const Int_t fRunId = 503, const Int_t nev = -1, const Int_t fExp
     // Create source using ucesb for input ------------------
     EXT_STR_h101 ucesb_struct;
 
-    R3BUcesbSource* source =
+    auto* source =
         new R3BUcesbSource(filename, ntuple_options, ucesb_path, &ucesb_struct, sizeof(ucesb_struct));
     source->SetMaxEvents(nev);
 

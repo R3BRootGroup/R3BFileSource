@@ -1,6 +1,6 @@
 ##############################################################################
-#   Copyright (C) 2023 GSI Helmholtzzentrum für Schwerionenforschung GmbH    #
-#   Copyright (C) 2023-2025 Members of R3B Collaboration                     #
+#   Copyright (C) 2025 GSI Helmholtzzentrum für Schwerionenforschung GmbH    #
+#   Copyright (C) 2025 Members of R3B Collaboration                          #
 #                                                                            #
 #             This software is distributed under the terms of the            #
 #                 GNU General Public Licence (GPL) version 3,                #
@@ -11,5 +11,8 @@
 # or submit itself to any jurisdiction.                                      #
 ##############################################################################
 
-add_subdirectory(unpack_test/s515)
-add_subdirectory(unpack_test/g249)
+generate_root_test_script(${R3BROOT_SOURCE_DIR}/R3BFileSource/unpack_test/g249/testunpack.C)
+add_test(NAME TestUnpackG249 COMMAND ${R3BROOT_BINARY_DIR}/R3BFileSource/unpack_test/g249/testunpack.sh)
+set_tests_properties(TestUnpackG249 PROPERTIES TIMEOUT "2000")
+set_tests_properties(TestUnpackG249 PROPERTIES PASS_REGULAR_EXPRESSION
+                                                  "Macro finished successfully.")
