@@ -11,5 +11,7 @@
 # or submit itself to any jurisdiction.                                      #
 ##############################################################################
 
+if(WITH_UCESB)
 add_subdirectory(unpack_test/s515)
 add_subdirectory(unpack_test/g249)
+endif(WITH_UCESB)
