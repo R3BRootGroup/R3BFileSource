@@ -35,7 +35,7 @@ typedef struct EXT_STR_h101_t
 
     EXT_STR_h101_FOOT_onion_t foot;
     EXT_STR_h101_CALIFA_t califa;
-    EXT_STR_h101_MOSAIC_onion_t mosaic;
+    EXT_STR_h101_MOSAIC202506_onion_t mosaic;
 
     EXT_STR_h101_FIBEO_onion_t fib30; // Fib 30
     EXT_STR_h101_FIBEI_onion_t fib31; // Fib 31
@@ -164,9 +164,7 @@ void testunpack(const Int_t fRunId = 503, const Int_t nev = -1)
     if (fAlpide)
     {
         auto mosaic =
-            new R3BMosaicReader((EXT_STR_h101_MOSAIC_onion*)&ucesb_struct.mosaic, offsetof(EXT_STR_h101, mosaic));
-        std::vector<int> mosaic_map = { 0, 0, 1, 0, 0, 0, 0, 0, 0 };
-        mosaic->SetMosaicMapping(mosaic_map);
+            new R3BMosaicReader((EXT_STR_h101_MOSAIC202506_onion*)&ucesb_struct.mosaic, offsetof(EXT_STR_h101, mosaic));
         source->AddReader(mosaic);
     }
 
