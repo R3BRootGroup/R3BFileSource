@@ -236,7 +236,7 @@ void testunpack(const Int_t fRunId = 503, const Int_t nev = -1)
     Double_t rtime = timer.RealTime() / 60.;
     Double_t ctime = timer.CpuTime() / 60.;
     std::cout << std::endl << std::endl;
-    std::cout << "Macro finished succesfully." << std::endl;
+    std::cout << "Macro finished successfully." << std::endl;
     std::cout << "Output file is " << outputFilename << std::endl;
     std::cout << "Real time " << rtime << " min, CPU time " << ctime << " min" << std::endl << std::endl;
     std::cout << "Macro finished successfully." << std::endl;
