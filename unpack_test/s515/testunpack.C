@@ -20,7 +20,7 @@ typedef struct EXT_STR_h101_t
     EXT_STR_h101_SCI2_t s2;
     EXT_STR_h101_MUSIC_onion_t music;
     EXT_STR_h101_AMS_onion_t ams;
-    EXT_STR_h101_CALIFA202402_t califa;
+    EXT_STR_h101_CALIFA202402_onion_t califa;
     EXT_STR_h101_LOS_t los;
     EXT_STR_h101_FIBTEN_onion_t fiber10;
     EXT_STR_h101_FIBELEVEN_onion_t fiber11;
@@ -155,7 +155,7 @@ void testunpack(const Int_t fRunId = 503, const Int_t nev = -1, const Int_t fExp
     if (fCalifa)
     {
         auto unpackcalifa =
-            new R3BCalifaFebexReader((EXT_STR_h101_CALIFA202402*)&ucesb_struct.califa, offsetof(EXT_STR_h101, califa));
+            new R3BCalifaFebexReader((EXT_STR_h101_CALIFA202402_onion*)&ucesb_struct.califa, offsetof(EXT_STR_h101, califa));
         auto unpackWRCalifa = new R3BWhiterabbitCalifaReader(
             (EXT_STR_h101_WRCALIFA*)&ucesb_struct.wrcalifa, offsetof(EXT_STR_h101, wrcalifa), 0xa00, 0xb00);
         source->AddReader(unpackcalifa);

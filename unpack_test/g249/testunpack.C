@@ -34,7 +34,7 @@ typedef struct EXT_STR_h101_t
     EXT_STR_h101_ROLU_onion_t rolu;
 
     EXT_STR_h101_FOOT_onion_t foot;
-    EXT_STR_h101_CALIFA202506_t califa;
+    EXT_STR_h101_CALIFA202506_onion_t califa;
     EXT_STR_h101_MOSAIC202506_onion_t mosaic;
 
     EXT_STR_h101_FIBEO_onion_t fib30; // Fib 30
@@ -158,7 +158,7 @@ void testunpack(const Int_t fRunId = 503, const Int_t nev = -1)
     if (fCalifa)
     {
         source->AddReader(
-            new R3BCalifaFebexReader((EXT_STR_h101_CALIFA202506*)&ucesb_struct.califa, offsetof(EXT_STR_h101, califa)));
+            new R3BCalifaFebexReader((EXT_STR_h101_CALIFA202506_onion*)&ucesb_struct.califa, offsetof(EXT_STR_h101, califa)));
     }
 
     if (fAlpide)
