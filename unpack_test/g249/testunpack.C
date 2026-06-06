@@ -157,8 +157,8 @@ void testunpack(const Int_t fRunId = 503, const Int_t nev = -1)
 
     if (fCalifa)
     {
-        source->AddReader(
-            new R3BCalifaFebexReader((EXT_STR_h101_CALIFA202506_onion*)&ucesb_struct.califa, offsetof(EXT_STR_h101, califa)));
+        source->AddReader(new R3BCalifaFebexReader((EXT_STR_h101_CALIFA202506_onion*)&ucesb_struct.califa,
+                                                   offsetof(EXT_STR_h101, califa)));
     }
 
     if (fAlpide)

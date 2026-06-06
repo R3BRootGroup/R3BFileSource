@@ -154,8 +154,8 @@ void testunpack(const Int_t fRunId = 503, const Int_t nev = -1, const Int_t fExp
 
     if (fCalifa)
     {
-        auto unpackcalifa =
-            new R3BCalifaFebexReader((EXT_STR_h101_CALIFA202402_onion*)&ucesb_struct.califa, offsetof(EXT_STR_h101, califa));
+        auto unpackcalifa = new R3BCalifaFebexReader((EXT_STR_h101_CALIFA202402_onion*)&ucesb_struct.califa,
+                                                     offsetof(EXT_STR_h101, califa));
         auto unpackWRCalifa = new R3BWhiterabbitCalifaReader(
             (EXT_STR_h101_WRCALIFA*)&ucesb_struct.wrcalifa, offsetof(EXT_STR_h101, wrcalifa), 0xa00, 0xb00);
         source->AddReader(unpackcalifa);
